@@ -1,10 +1,10 @@
 import { Component, Vue } from 'nuxt-property-decorator'
-import Logo from '~/components/atoms/Logo.vue'
+import SignInForm from '~/components/form/SignInForm.vue'
 import { unauthenticatedOnly } from '~/middleware'
 
 @Component({
   components: {
-    Logo,
+    SignInForm,
   },
   middleware: unauthenticatedOnly,
 })

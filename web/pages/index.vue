@@ -3,34 +3,16 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
-      <h1 class="title">microposts-web</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <Logo fadein />
+      <h1 class="title">microposts app</h1>
     </div>
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .container {
   margin: 0 auto;
-  height: calc(100vh - 56px);
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,9 +35,5 @@
   color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>
