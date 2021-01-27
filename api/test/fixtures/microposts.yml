@@ -1,0 +1,19 @@
+orange:
+  content: "I just ate an orange!"
+  user: michael
+  created_at: <%= 10.minutes.ago %>
+
+tau_manifesto:
+  content: "Checkt out the @tauday site by @mhartl: http://tauday.com"
+  user: michael
+  created_at: <%= 3.years.ago %>
+
+cat_video:
+  content: "Sad cats are sad: http://youtu.be/PKffm2ul4dk"
+  user: michael
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  content: "Writing a short test"
+  user: michael
+  created_at: <%= Time.zone.now %>
