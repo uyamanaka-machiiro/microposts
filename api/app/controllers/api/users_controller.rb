@@ -30,7 +30,7 @@ module Api
     def create
       user = User.new(user_params)
       if user.save
-        render json: { status: :ok, data: user }, status: :ok, location: user
+        render json: { status: :ok, data: user }, status: :ok
       else
         render json: { status: :unprocessable_entity, errors: user.errors }, status: :unprocessable_entity
       end
