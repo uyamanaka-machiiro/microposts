@@ -1,9 +1,11 @@
 import { Component, Vue } from 'nuxt-property-decorator'
-import Header from '~/components/layouts/Header/Header.vue'
+import NavBrand from './NavBrand.vue'
+import AuthorizedNavMenu from './AuthorizedNavMenu.vue'
 
 @Component({
   components: {
-    Header,
+    NavBrand,
+    AuthorizedNavMenu,
   },
 })
 export default class extends Vue {}

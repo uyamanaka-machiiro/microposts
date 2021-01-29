@@ -7,7 +7,8 @@ module Api
     private
 
     def set_user
-      @user = User.find(params[:id])
+      id = params[:id]
+      @user = id == 'me' ? current_user : user.find(id)
     end
 
     def user_params

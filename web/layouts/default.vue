@@ -2,12 +2,16 @@
 
 <template>
   <div>
-    <Header />
-    <Nuxt />
+    <header>
+      <Header />
+    </header>
+    <section id="main">
+      <Nuxt />
+    </section>
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -25,6 +29,14 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+header {
+  height: 57px;
+}
+
+section#main {
+  height: calc(100vh - 57px);
 }
 
 .button--green {

@@ -1,9 +1,13 @@
+<!-- ロゴ用意するの面倒なので、デフォのNuxtのやつをそのまま使う -->
+<script src="./Logo.ts"></script>
+
 <template>
   <svg
-    class="NuxtLogo"
-    width="245"
-    height="180"
-    viewBox="0 0 452 342"
+    class="nuxt-logo"
+    :class="{ appear: fadein }"
+    :width="width"
+    :height="height"
+    :viewBox="viewBox"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -21,10 +25,12 @@
   </svg>
 </template>
 
-<style>
-.NuxtLogo {
-  animation: 1s appear;
+<style lang="scss" scoped>
+.nuxt-logo {
   margin: auto;
+  &.appear {
+    animation: 1s appear;
+  }
 }
 
 @keyframes appear {

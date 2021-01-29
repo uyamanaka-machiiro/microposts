@@ -21,14 +21,24 @@ const config: NuxtConfig = {
       home: '/',
     },
   },
-  css: [],
+  css: ['@/assets/sass/custom.sass'],
   plugins: [],
   components: true,
-  buildModules: ['@nuxt/typescript-build'],
-  modules: ['bootstrap-vue/nuxt', '@nuxtjs/auth'],
+  buildModules: ['@nuxt/typescript-build', 'nuxt-typed-vuex'],
+  modules: [
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/auth',
+    '@nuxtjs/axios',
+    // '@nuxtjs/proxy',
+  ],
   build: {},
   server: {
     port: 8000,
+  },
+  bootstrapVue: {
+    icons: true,
+    bootstrapCss: false,
+    bootstrapVueCss: false,
   },
 }
 

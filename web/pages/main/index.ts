@@ -1,9 +1,7 @@
 import { Component, Vue } from 'nuxt-property-decorator'
-import Header from '~/components/layouts/Header/Header.vue'
+import { authenticatedOnly } from '~/middleware'
 
 @Component({
-  components: {
-    Header,
-  },
+  middleware: authenticatedOnly,
 })
 export default class extends Vue {}
