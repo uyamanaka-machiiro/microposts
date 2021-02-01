@@ -5,8 +5,17 @@ export interface Response<T> {
   data: T
 }
 
+export interface Pagination {
+  current: number // default: 1
+  next?: number | null
+  prev?: number | null
+  limit: number // default: 0
+  pages: number // default: 1
+  count: number // default: 0
+}
+
 export interface ListResponse<T> extends Response<Array<T>> {
-  pagination: {}
+  pagination: Pagination
 }
 
 export interface NoContentResponse extends Response<undefined> {}

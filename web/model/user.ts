@@ -1,10 +1,8 @@
-export interface User {
-  id: number
+import { Entity } from './common'
+
+export interface User extends Entity {
   name: string
   email: string
-  createdAt: string
-  modifiedAt: string
-  deletedAt?: string
 }
 
 export interface UserDraft extends Partial<User> {}

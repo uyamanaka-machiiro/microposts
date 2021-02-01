@@ -1,6 +1,10 @@
-export interface Micropost {
+import { Entity } from './common'
+
+export interface Micropost extends Entity {
   content: string
   userId: number
-  createdAt: string
-  modifiedAt: string
+}
+
+export interface MicropostDraft {
+  content: string
 }

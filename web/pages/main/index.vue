@@ -1,5 +1,16 @@
 <script src="./index.ts"></script>
 
 <template>
-  <div>Login successful!</div>
+  <div class="container">
+    <MicropostForm />
+    <div>
+      <MicropostList />
+    </div>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.container {
+  margin: 0 auto;
+}
+</style>

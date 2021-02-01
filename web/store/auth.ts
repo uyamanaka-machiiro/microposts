@@ -67,9 +67,9 @@ export const actions = actionTree(
       this.$router.push('/')
     },
 
-    async signUp({ commit }, newUser: SignUpUser) {
-      const authService = new AuthService(this.app.$accessor)
-      const userService = new UserService(this.app.$accessor)
+    async signUp(_, newUser: SignUpUser) {
+      const { $accessor } = this.app
+      const userService = new UserService($accessor)
 
       const userResponse = await userService.create(newUser, { token: false })
       if (!isSuccess(userResponse)) {
@@ -78,15 +78,8 @@ export const actions = actionTree(
       }
 
       const { email, password } = newUser
-      const loginResponse = await authService.signIn(email, password)
-      if (!isSuccess(loginResponse)) {
-        // show error
-        return
-      }
-
-      commit('setToken', loginResponse.data.token)
-      commit('setCurrentUser', userResponse.data)
-      this.$router.push('/main')
+      const { signIn } = $accessor.auth
+      signIn({ email, password })
     },
   }
 )

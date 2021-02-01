@@ -6,7 +6,7 @@ module Pagination
         current: resources.current_page,
         prev: resources.prev_page,
         next: resources.next_page,
-        limit_value: resources.limit_value,
+        limit: resources.limit_value,
         pages: resources.total_pages,
         count: resources.total_count
       }

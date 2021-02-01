@@ -13,24 +13,11 @@ const config: NuxtConfig = {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-  auth: {
-    redirect: {
-      login: '/login',
-      logout: '/login',
-      callback: false,
-      home: '/',
-    },
-  },
   css: ['@/assets/sass/custom.sass'],
   plugins: [],
   components: true,
   buildModules: ['@nuxt/typescript-build', 'nuxt-typed-vuex'],
-  modules: [
-    'bootstrap-vue/nuxt',
-    '@nuxtjs/auth',
-    '@nuxtjs/axios',
-    // '@nuxtjs/proxy',
-  ],
+  modules: ['bootstrap-vue/nuxt', '@nuxtjs/axios', ['@nuxtjs/moment', ['ja']]],
   build: {},
   server: {
     port: 8000,

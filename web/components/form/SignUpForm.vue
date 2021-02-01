@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <b-form @submit="onSubmit" @reset="onReset">
+    <b-form @submit="onSubmit">
       <FormLabel label="email" label-for="signup-email">
         <InputEmail
           id="signup-email"
