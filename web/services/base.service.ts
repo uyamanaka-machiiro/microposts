@@ -6,6 +6,11 @@ import { isDefined, convertKeyCaseSensitive } from '~/utils'
 export interface ServiceOption {
   token: boolean | string
   headers?: AxiosRequestConfig['headers']
+  query?: { [key: string]: string | number | boolean | null | undefined }
+}
+
+export interface PaginatableServiceOption extends ServiceOption {
+  page?: number | null
 }
 
 const defaultOption: ServiceOption = {
@@ -24,9 +29,7 @@ function createAxios(baseURL: string) {
 
   newAxios.interceptors.request.use((request) => {
     if (isDefined(request.data)) {
-      console.log(request.data)
       request.data = convertKeyCaseSensitive(request.data, snakeCase)
-      console.log(request.data)
     }
     return request
   })
@@ -41,6 +44,7 @@ function createAxios(baseURL: string) {
   return newAxios
 }
 
+// FIXME 正直言って気持ち悪い。$axiosも$accessorもVueのコンポーネント内ならthisでアクセスできるものだから、Serviceでもそうしたい
 export abstract class BaseService {
   // FIXME use env
   private readonly host = 'localhost' as const
@@ -94,14 +98,14 @@ export abstract class BaseService {
     }
   }
 
-  $get<T>(
+  protected $get<T>(
     path: string,
     opt: Partial<ServiceOption> = {}
   ): Promise<AxiosResponse<T>> {
     return this.$axios.get<T>(path, this.toAxiosRequestConfig(opt))
   }
 
-  $post<T>(
+  protected $post<T>(
     path: string,
     data?: any,
     opt: Partial<ServiceOption> = {}
@@ -109,7 +113,7 @@ export abstract class BaseService {
     return this.$axios.post<T>(path, data, this.toAxiosRequestConfig(opt))
   }
 
-  $put<T>(
+  protected $put<T>(
     path: string,
     data?: any,
     opt: Partial<ServiceOption> = {}
@@ -117,7 +121,7 @@ export abstract class BaseService {
     return this.$axios.put<T>(path, data, this.toAxiosRequestConfig(opt))
   }
 
-  $patch<T>(
+  protected $patch<T>(
     path: string,
     data?: any,
     opt: Partial<ServiceOption> = {}
@@ -125,7 +129,7 @@ export abstract class BaseService {
     return this.$axios.patch<T>(path, data, this.toAxiosRequestConfig(opt))
   }
 
-  $delete<T>(
+  protected $delete<T>(
     path: string,
     opt: Partial<ServiceOption> = {}
   ): Promise<AxiosResponse<T>> {
