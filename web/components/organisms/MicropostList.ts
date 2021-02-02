@@ -1,5 +1,5 @@
 import { Component, Prop, Vue, Watch } from 'nuxt-property-decorator'
-import MicropostBlock from './MicropostBlock.vue'
+import MicropostBlock from '~/components/molecule/Microposts/MicropostBlock.vue'
 import { Micropost } from '~/model'
 
 @Component({
@@ -11,9 +11,8 @@ export default class extends Vue {
   @Prop({ type: Number, default: 1 })
   readonly page!: number
 
-  get microposts(): Micropost[] {
-    return this.$accessor.micropost.microposts
-  }
+  @Prop({ type: Array, required: true })
+  readonly microposts!: Micropost[]
 
   @Watch('page', { immediate: true })
   onChangePage() {

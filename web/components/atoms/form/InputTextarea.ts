@@ -1,4 +1,3 @@
-import { componentsPlugin } from 'bootstrap-vue'
 import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import FormTextMixin from './mixins/FormTextMixin.vue'
 import FormControlMixin from './mixins/FormControlMixin.vue'

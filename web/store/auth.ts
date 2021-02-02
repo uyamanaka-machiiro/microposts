@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash'
 import { getterTree, mutationTree, actionTree } from 'nuxt-typed-vuex'
 import { CommonMutationType } from './common'
-import { isSuccess, User, SignUpUser } from '~/model'
+import { isSuccess, User, SignUpUser, LoginPayload } from '~/model'
 import { AuthService, UserService } from '~/services'
 
 export interface RootState {
@@ -31,8 +31,6 @@ export const mutations = mutationTree(state, {
     state.currentUser = user
   },
 })
-
-type LoginPayload = { email: string; password: string }
 
 export const actions = actionTree(
   { state, getters, mutations },

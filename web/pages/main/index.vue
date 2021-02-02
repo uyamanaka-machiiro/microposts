@@ -2,9 +2,9 @@
 
 <template>
   <div class="container">
-    <MicropostForm />
+    <MicropostForm @submit="onSubmit" />
     <div>
-      <MicropostList />
+      <MicropostList :microposts="microposts" />
     </div>
   </div>
 </template>
