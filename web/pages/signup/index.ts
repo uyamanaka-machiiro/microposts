@@ -1,6 +1,7 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 import { unauthenticatedOnly } from '~/middleware'
-import SignUpForm from '~/components/form/SignUpForm.vue'
+import SignUpForm from '~/components/organisms/form/SignUpForm.vue'
+import { SignUpUser } from '~/model'
 
 @Component({
   components: {
@@ -8,4 +9,8 @@ import SignUpForm from '~/components/form/SignUpForm.vue'
   },
   middleware: unauthenticatedOnly,
 })
-export default class extends Vue {}
+export default class extends Vue {
+  onSubmit(payload: SignUpUser) {
+    this.$accessor.auth.signUp(payload)
+  }
+}

@@ -1,4 +1,3 @@
-import { isEmpty } from 'lodash'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
 @Component

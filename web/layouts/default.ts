@@ -1,5 +1,5 @@
 import { Component, Vue } from 'nuxt-property-decorator'
-import Header from '~/components/layouts/Header/Header.vue'
+import Header from '~/components/organisms/Header.vue'
 
 @Component({
   components: {

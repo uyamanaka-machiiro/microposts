@@ -4,7 +4,7 @@
   <div class="container">
     <div id="form-wrap">
       <b-card header="Micropost Appへようこそ!" border-variant="dark">
-        <SignUpForm />
+        <SignUpForm @submit="onSubmit" />
 
         <b-card-text>
           <small>

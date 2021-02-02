@@ -1,7 +1,8 @@
 import { isEmpty } from 'lodash'
-import { Component, Vue } from 'nuxt-property-decorator'
+import { Component, Vue, Watch } from 'nuxt-property-decorator'
 import InputTextarea from '~/components/atoms/form/InputTextarea.vue'
 import SubmitButton from '~/components/atoms/SubmitButton.vue'
+import { Micropost } from '~/model'
 
 @Component({
   components: {
@@ -12,20 +13,28 @@ import SubmitButton from '~/components/atoms/SubmitButton.vue'
 export default class extends Vue {
   content: string = ''
 
+  page: number = 1
+
   get submitClickable() {
     return !isEmpty(this.content)
+  }
+
+  get microposts(): Micropost[] {
+    return this.$accessor.micropost.microposts
   }
 
   reset() {
     this.content = ''
   }
 
-  async onSubmit(event: Event) {
+  onSubmit(event: Event) {
     event.preventDefault()
-    const { post, reload } = this.$accessor.micropost
-
-    await post({ content: this.content })
+    this.$emit('submit', { content: this.content })
     this.reset()
-    await reload()
+  }
+
+  @Watch('page', { immediate: true })
+  onChangePage() {
+    this.$accessor.micropost.list(this.page)
   }
 }

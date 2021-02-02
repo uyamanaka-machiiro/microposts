@@ -4,7 +4,7 @@
   <div class="container">
     <div id="form-wrap">
       <b-card header="Sign in" border-variant="dark">
-        <SignInForm />
+        <SignInForm @submit="onSubmit" />
 
         <b-card-text>
           <small>
