@@ -1,4 +1,4 @@
-<script src="./NavBrand.ts"></script>
+<script lang="ts" src="./NavBrand.ts"></script>
 
 <template>
   <b-navbar-brand :href="href">

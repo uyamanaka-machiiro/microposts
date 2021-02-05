@@ -1,5 +1,5 @@
 <!-- ロゴ用意するの面倒なので、デフォのNuxtのやつをそのまま使う -->
-<script src="./Logo.ts"></script>
+<script lang="ts" src="./Logo.ts"></script>
 
 <template>
   <svg

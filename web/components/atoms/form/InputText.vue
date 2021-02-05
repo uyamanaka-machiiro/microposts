@@ -1,4 +1,4 @@
-<script src="./InputText.ts"></script>
+<script lang="ts" src="./InputText.ts"></script>
 
 <template>
   <b-form-input

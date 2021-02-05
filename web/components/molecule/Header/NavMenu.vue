@@ -1,4 +1,4 @@
-<script src="./NavMenu.ts"></script>
+<script lang="ts" src="./NavMenu.ts"></script>
 
 <template>
   <b-navbar-nav class="ml-auto">

@@ -1,4 +1,4 @@
-<script src="./InputPassword.ts"></script>
+<script lang="ts" src="./InputPassword.ts"></script>
 
 <template>
   <b-form-input

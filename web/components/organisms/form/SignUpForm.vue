@@ -1,4 +1,4 @@
-<script src="./SignUpForm.ts"></script>
+<script lang="ts" src="./SignUpForm.ts"></script>
 
 <template>
   <div>

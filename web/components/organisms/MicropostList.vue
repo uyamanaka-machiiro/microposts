@@ -1,4 +1,4 @@
-<script src="./MicropostList.ts"></script>
+<script lang="ts" src="./MicropostList.ts"></script>
 
 <template>
   <b-list-group>
