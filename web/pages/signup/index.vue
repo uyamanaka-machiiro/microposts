@@ -1,4 +1,4 @@
-<script src="./index.ts"></script>
+<script lang="ts" src="./index.ts"></script>
 
 <template>
   <div class="container">

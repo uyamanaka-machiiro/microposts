@@ -65,6 +65,10 @@ typings/
 # next.js build output
 .next
 
+# storybook output
+.nuxt-storybook
+storybook-static
+
 # nuxt.js build output
 .nuxt
 
