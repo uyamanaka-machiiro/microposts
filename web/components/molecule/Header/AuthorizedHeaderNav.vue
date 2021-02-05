@@ -1,4 +1,4 @@
-<script src="./AuthorizedHeaderNav.ts"></script>
+<script lang="ts" src="./AuthorizedHeaderNav.ts"></script>
 
 <template>
   <div>

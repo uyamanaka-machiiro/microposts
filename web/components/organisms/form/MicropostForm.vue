@@ -1,4 +1,4 @@
-<script src="./MicropostForm.ts"></script>
+<script lang="ts" src="./MicropostForm.ts"></script>
 
 <template>
   <div>

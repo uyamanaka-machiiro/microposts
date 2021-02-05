@@ -1,4 +1,4 @@
-<script src="./FormLabel.ts"></script>
+<script lang="ts" src="./FormLabel.ts"></script>
 
 <template>
   <b-form-group

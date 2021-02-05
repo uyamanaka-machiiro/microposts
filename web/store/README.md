@@ -41,7 +41,8 @@
 |      component/atom |   x    |   x    |
 |  component/molecule |   x    |   x    |
 | component/organisms |   x    |   x    |
-|                page |   o    |   o    |
+|         (other)page |   x    |   x    |
+|          (same)page |   o    |   o    |
 
 ## Component Store
 

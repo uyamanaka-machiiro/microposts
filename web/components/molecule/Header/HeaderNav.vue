@@ -1,4 +1,4 @@
-<script src="./HeaderNav.ts"></script>
+<script lang="ts" src="./HeaderNav.ts"></script>
 
 <template>
   <div>
